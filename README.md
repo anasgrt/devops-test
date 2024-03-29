@@ -1,29 +1,16 @@
-# DevOps Test
+## General:
 
-## Must do:
+- This repo contains a bash script to automate the provisioning of Kubernetes cluster on Ubuntu 22 server and install wordpress helm chart inside the cluster.
 
-1. [GitOps Principles](https://en.wikipedia.org/wiki/DevOps#GitOps) [Explainer Video](https://www.youtube.com/watch?v=f5EpcWp0THw)
-2. Document your solution
+- The WordPress Helm chart is pre-configured to set a WordPress application up along with MySQL and PhpMyAdmin. The ingress for both MySQL and PhpMyAdmin is also configured in this Helm chart.
 
-## Requirements and Step
+- The Helm chart is hosted in a GitHub repository named *`wordpress-helm-chart`*, you can access it using the URL https://github.com/anasgrt/wordpress-helm-chart.git
 
+- After cloning the repository, you need to make the *`automate.sh`* script executable and run it. This is done using the chmod command to change the file's permissions, and then executing the script with ./automate.sh. as following:
 
-1. Setup a Kubernetes cluster on a single node (CP + Worker) using Kubespray
-2. Create a Helm Chart that bootstraps a WordPress application with MySQL and PhpMyAdmin ingress
+```
+sudo chmod +x automate.sh
+./automate.sh
 
-- WordPress Ingress
-- MySQL Deployment
-- PhpMyAdmin has an Ingress
+```
 
-## Nice to do
-
-1. Create a Terraform script for the Kubernetes cluster
-2. Create a CI/CD Azure Pipeline in YAML format in the root project.
-
-## Delivery
-1. You will be given a VPS running Ubuntu 22, you must be able to deploy with the single command line on this VPS.
-2. You must plan your code in such a way that if we erase the VPS and start over, we must arrive at the same state that you intended.
-3. Must have a single execution script/file that we can bootstrap and review your result in a clean Ubuntu server in our environment
-4. Clone/copy this repository into a new GitHub repository and add your result, then share the result with user: `mason-chase` on GitHub in private mode.
-5. We must be able to navigate to `https://candidate-name.maxtld.dev/dbadmin` and observe PhpMyAdmin UI and it must work
-6. WordPress must be available at `https://candidate-name.maxtld.dev/wordpress`
