@@ -1,6 +1,6 @@
 ## General:
 
-- This repo contains a bash script to automate the provisioning of Kubernetes cluster using Kubespray on Ubuntu 22 server and install wordpress helm chart inside the cluster.
+- This repo contains a bash script to automate the provisioning of Kubernetes cluster using Kubespray on Ubuntu 22.04 server and install wordpress helm chart inside the cluster.
 
 - The WordPress Helm chart is pre-configured to set a WordPress application up along with MySQL and PhpMyAdmin. The ingress for both MySQL and PhpMyAdmin is also configured in this Helm chart.
 
